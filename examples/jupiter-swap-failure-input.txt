@@ -1,0 +1,17 @@
+Incident report:
+
+Users report swaps failing after signing. The UI uses Jupiter Ultra API for quote and execute.
+Failures appear on SOL -> USDC and BONK -> USDC routes during a price spike.
+
+Observed logs:
+
+Jupiter swap transaction failed.
+SlippageToleranceExceeded: out amount below minimum.
+route plan changed after quote.
+RPC simulation succeeds sometimes, but execution fails after 18-25 seconds of wallet signing latency.
+Token-2022 transfer hook detected on one routed token.
+
+Recent changes:
+
+- Dynamic slippage was disabled for a launch campaign.
+- Priority fee cap was set globally instead of per route.

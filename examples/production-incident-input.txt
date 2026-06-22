@@ -1,0 +1,21 @@
+Incident report:
+
+Starting at 2026-06-19 14:05 UTC, about 38% of launch mint attempts fail.
+Users sign in Phantom mobile, then the UI stays pending or shows "try again".
+
+signature: 5N7vKqS5fK7QdP82pLaFtyqjJ5uNYqM6T4irX2sE9pR7mC8qUa9R3bVYxHh4mTn2vLqP6sAa8WrC3yZ9tFJ2nGd
+program: 9xQeWvG816bUx9EPjHmaT23yvVM2ZW9kqR3LvQ8e8Fo
+
+Observed logs:
+
+TransactionExpiredBlockheightExceededError: Signature expired: block height exceeded
+Program log: AnchorError caused by account: vault. Error Code: ConstraintSeeds.
+Program consumption: consumed 200000 of 200000 compute units
+RPC 429 Too Many Requests from primary provider
+webhook delivery failed, indexed slot lag is 824 slots
+
+Recent changes:
+
+- New mint frontend deployed 20 minutes before first reports.
+- RPC write endpoint changed to a shared key.
+- Webhook consumer was redeployed with a new queue worker count.

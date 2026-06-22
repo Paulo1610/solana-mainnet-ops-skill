@@ -1,0 +1,16 @@
+Incident report:
+
+Users completed mints on-chain, but the dashboard still shows "not minted".
+Support tickets include duplicate activity rows for the same signature.
+
+Observed logs:
+
+webhook delivery failed with endpoint 500.
+queue lag is 41 minutes.
+indexed slot is 12,480 slots behind confirmed RPC slot.
+duplicate event observed during replay.
+
+Recent changes:
+
+- Webhook consumer was redeployed with a new database unique key.
+- CDN cache TTL for wallet activity was increased.

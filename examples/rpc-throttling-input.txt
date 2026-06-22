@@ -1,0 +1,16 @@
+Incident report:
+
+During a claims campaign, users intermittently see pending transactions for 90-120 seconds.
+About 24% of claim attempts fail, mostly from mobile wallets.
+
+Observed logs:
+
+sendRawTransaction returned 429 Too Many Requests from the primary RPC.
+Several requests returned 503 Service Unavailable.
+TransactionExpiredBlockheightExceededError after wallet approval.
+Provider dashboard says "Node is behind" and websocket subscriptions reconnect every few minutes.
+
+Recent changes:
+
+- Write traffic moved to the same RPC key used for indexer backfills.
+- Backend retry count increased from 2 to 8.
